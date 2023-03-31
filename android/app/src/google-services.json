@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "436380248444",
+    "project_id": "eventgo-453da",
+    "storage_bucket": "eventgo-453da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436380248444:android:eea43dc5fc1997f2159cf9",
+        "android_client_info": {
+          "package_name": "com.example.eventgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436380248444-hin685ldh49uscak1ot6q4adqo9a2cmb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6BF6ULD-Ylk8ccJEUoIpucafiUd5DFk4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436380248444-hin685ldh49uscak1ot6q4adqo9a2cmb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
