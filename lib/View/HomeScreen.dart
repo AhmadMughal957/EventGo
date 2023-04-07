@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:eventgo/Classes/caatalogmodel.dart';
-import 'package:eventgo/EventDetails.dart';
+import 'package:eventgo/View/EventDetails.dart';
+import 'package:eventgo/models/caatalogmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screen_scaler/flutter_screen_scaler.dart';
 

@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:eventgo/Classes/Person%20Details.dart';
+import 'package:eventgo/View/Person%20Details.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screen_scaler/flutter_screen_scaler.dart';
 
@@ -129,7 +130,7 @@ _EventDetailState({required this.fees,required this.name,required this.image, re
               padding: scaler.getPaddingLTRB(3, 2, 0, 0),
               child: Card(
                 child: Container(
-                  height: scaler.getHeight(20),
+                  height: scaler.getHeight(30),
                   width: scaler.getWidth(100),
                   child: Padding(
                     padding: scaler.getPaddingLTRB(3, 2, 0, 0),
@@ -172,6 +173,16 @@ _EventDetailState({required this.fees,required this.name,required this.image, re
                             Text(time),
                           ],
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Icon(Icons.people),
+                            SizedBox(width: 10,),
+                            Text('Attendance: 832')
+                          ],
+                        ),
                         Padding(
                           padding: scaler.getPaddingLTRB(3, 2, 50, 0),
                           child: Container(
@@ -205,15 +216,16 @@ _EventDetailState({required this.fees,required this.name,required this.image, re
                   showModalBottomSheet(
                       context: context,
                       builder: (context) {
-                        return Container(
-                          height: 600,
-                          child: Center(
+                        return SingleChildScrollView(
+                          scrollDirection: Axis.vertical,
+                          child: Container(
+                            height: 750,
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisSize: MainAxisSize.min,
                               children:  <Widget>[
                                 SizedBox(
-                                  height: 10,
+                                  height: 30,
                                 ),
                                 Text('Person-Details',style: TextStyle(fontSize: 30),),
                                 SizedBox(
@@ -331,7 +343,33 @@ _EventDetailState({required this.fees,required this.name,required this.image, re
                                         backgroundColor: Colors.purple
                                       ),
                                         onPressed: (){
-                                          createUser();
+                                          createUser().then((
+                                              value) {
+                                            final snackBar=SnackBar(
+                                              content:  Text('Registration Succesfully Done!'),
+                                              backgroundColor: (Colors.black),
+                                              action: SnackBarAction(
+                                                label: 'dismiss',
+                                                onPressed: () {
+                                                },
+                                              ),
+
+                                            );
+                                            Navigator.of(context).pop();
+                                            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                                          }).onError((error, stackTrace) {
+                                            final snackBar=SnackBar(
+                                              content:  Text('${error.toString()}'),
+                                              backgroundColor: (Colors.black),
+                                              action: SnackBarAction(
+                                                label: 'dismiss',
+                                                onPressed: () {
+                                                },
+                                              ),
+
+                                            );
+                                            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                                          } );;
                                         }, child: Text('Confirm')),
                                   ),
                                 )

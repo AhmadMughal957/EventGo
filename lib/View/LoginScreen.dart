@@ -1,5 +1,6 @@
-import 'package:eventgo/HomeScreen.dart';
-import 'package:eventgo/SignUp%20Screen.dart';
+
+import 'package:eventgo/View/HomeScreen.dart';
+import 'package:eventgo/View/SignUp%20Screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

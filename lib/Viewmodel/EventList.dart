@@ -1,4 +1,4 @@
-import 'package:eventgo/Classes/caatalogmodel.dart';
+import 'package:eventgo/models/caatalogmodel.dart';
 import 'package:flutter/cupertino.dart';
 
 class EventList extends ChangeNotifier{

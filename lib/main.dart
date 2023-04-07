@@ -1,14 +1,14 @@
 import 'dart:async';
 
+
+import 'package:eventgo/View/MainScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-import 'HomeScreen.dart';
-import 'LoginScreen.dart';
-import 'MainScreen.dart';
+
 /// This is a reimplementation of the default Flutter application using provider + [ChangeNotifier].
 var emaill;
 
@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
     }else{
       Timer(Duration(seconds: 2), () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) =>  Homescreen()));
+            MaterialPageRoute(builder: (context) =>  SignInOrRegister()));
       });
     }
     return Scaffold(
@@ -53,13 +53,23 @@ class _SplashScreenState extends State<SplashScreen> {
             alignment: Alignment.center,
               height: 800,
               width: 400,
-              child: Text(" EventGo.....",
-              style: TextStyle(
-                fontSize: 50,
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
-                color: Colors.black
-              ),)
+              child: Column(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    height: 400,
+                    width: 400,
+                    child:Image.asset('assets/images/Property_logo.png')
+                  ),
+                  Text(" PropertyPro",
+                  style: TextStyle(
+                    fontSize: 50,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green
+                  ),),
+                ],
+              )
           ),
 
         ],
